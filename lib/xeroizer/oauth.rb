@@ -132,6 +132,9 @@ module Xeroizer
           consumer.http.cert = @consumer_options[:ssl_client_cert]
           consumer.http.key = @consumer_options[:ssl_client_key]
         end
+        if @consumer_options[:read_timeout]
+          consumer.http.read_timeout = @consumer_options[:read_timeout]
+        end
         consumer
 
         if @consumer_options[:http_debug_output]
